@@ -1,0 +1,115 @@
+:root {
+  --bg: #f4f1ea;
+  --panel: #ffffff;
+  --fg: #1d2127;
+  --muted: #6b7280;
+  --line: #e2ddd2;
+  --accent: #2f5d7c;
+  --accent-soft: #eaf0f4;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  color: var(--fg);
+  background:
+    radial-gradient(1100px 600px at 12% -5%, #ffffff 0%, rgba(255,255,255,0) 60%),
+    radial-gradient(900px 500px at 95% 8%, #e7eef3 0%, rgba(231,238,243,0) 65%),
+    var(--bg);
+  background-attachment: fixed;
+  font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+        "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 72px 24px 96px;
+}
+
+h1 {
+  font-size: 1.65rem;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin: 0 0 32px;
+  color: var(--accent);
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+input {
+  flex: 1 1 240px;
+  padding: 11px 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--fg);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(29, 33, 39, 0.04);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+button {
+  padding: 11px 18px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+button:hover:not(:disabled) { background: #26506c; }
+
+button.secondary {
+  background: var(--panel);
+  color: var(--accent);
+}
+
+button.secondary:hover:not(:disabled) { background: var(--accent-soft); }
+
+button:disabled { opacity: 0.55; cursor: default; }
+
+.error { color: #b4453c; margin: 0 0 16px; }
+.miss { color: var(--muted); margin: 0 0 12px; }
+
+.results {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px 22px;
+  box-shadow: 0 1px 3px rgba(29, 33, 39, 0.05);
+}
+
+.user {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.user:last-child { border-bottom: none; }
+
+.user p {
+  margin: 3px 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.count { font-weight: 600; color: var(--accent); }
